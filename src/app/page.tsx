@@ -4,7 +4,10 @@ import { useState, useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { PieChart, Pie, Cell, Tooltip, Label } from 'recharts';
 
+
 import AnswerChoice from "./components/answerChoice";
+
+import {MessageDataHorror, MessageTypeHorror} from '../../data/horror/finalScoreQuotesHorror'
 
 const data = [
   { name: 'Correct', value: 3 },
@@ -42,10 +45,21 @@ const questions = [
       ], 
       correctAnswer: 'Michael Romeo'
   },
+  {
+    question: "Who is the murderer in Friday the 13th?",
+    answers: [
+            'George Lynch',
+            'Timo Tolkki',
+            'Michael Romeo',
+            'Steve Lukather' 
+      ], 
+      correctAnswer: 'Michael Romeo'
+  },
 ]
 
 
 export default function Home() {
+
 
   const COLORS = ['#628D7C', '#b1b5b5'];  // Custom colors for correct and incorrect
 
@@ -57,6 +71,15 @@ export default function Home() {
   
   const [isQuizOver, setIsQuizOver] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+
+  const handleStartOver = () => {
+    setIsAnswered(false)
+    setQuestionIndex(prev => 0)
+    setAnswerChosen('')
+    setScore(0)
+    // setIsMounted(false)
+    setIsQuizOver(prev => false)
+  };
 
   const handleClick = (answer: string) => {
     if(answer === questions[questionIndex].correctAnswer) {
@@ -79,6 +102,8 @@ export default function Home() {
       setQuestionIndex(prev => prev + 1)
   }
 
+ 
+
   const calculatePercentage = () => {
     const percent = score/questions.length;
 
@@ -93,6 +118,23 @@ export default function Home() {
     ]
   }
 
+  const getFinalScoreQuote = () => {
+    const percent = Math.floor((score/questions.length) * 100)
+    switch(true) {
+      case percent === 100:
+        return MessageDataHorror[0].message;
+      case percent >= 90:
+        return MessageDataHorror[1].message;
+      case percent >= 80:
+          return MessageDataHorror[2].message;
+      case percent >= 70:
+        return MessageDataHorror[3].message;
+      default:
+        
+        return MessageDataHorror[4].message
+    }
+  }
+
 
   useEffect(() => {
     // This ensures the chart is rendered only on the client side
@@ -103,14 +145,17 @@ export default function Home() {
     // Render null on the server (or during initial render)
     return null;
   }
+
+
   return (
     <div className="page-wrapper">
       <main className="section-wrapper">
-        <div className="quiz-container">
+        
         {!isQuizOver && <>
+          <div className="quiz-container">
                           <div className="quiz-header-wrapper">
                             <div>
-                              <h2>Horror Movies</h2>
+                              <h2 className="quiz-header-text-lg">Horror Movies</h2>
                             </div>
                             <div>
                               <p>Question {questionIndex + 1} of {questions.length}</p>
@@ -130,14 +175,19 @@ export default function Home() {
                             )
                             })}
                           </ul>
-                        </>}
+                          {isAnswered && (questionIndex  <= questions.length - 1) && <div className="btn-container"><button className="btn-next" onClick={handleNextButton}><span>{(questionIndex  >= questions.length - 1) ? `Show Score` : `Next`}</span><span><FaArrowRightLong /></span></button></div> }
+          </div>
+        </>}
         
-        {isAnswered && (questionIndex  <= questions.length - 1) && <div className="btn-container"><button className="btn-next" onClick={handleNextButton}><span>{(questionIndex  >= questions.length - 1) ? `Show Score` : `Next`}</span><span><FaArrowRightLong /></span></button></div> }
+       
         {isQuizOver &&  
-                <div>
-                  <div className="final-score-heading">
-                    <h2>Final Score</h2>
-                    <p>{calculatePercentage()}</p>
+               <div className="final-score-container">
+                  <div className="final-score-header-wrapper">
+                    <h2 className="header-left quiz-header-text-lg">Horror Movies</h2>
+                    <div className="header-right">
+                      <p className="header-middle">Final Score:</p>
+                      <p >{calculatePercentage()}</p>
+                    </div>
                   </div>
                   <div className="quiz-results-inner-container">
                     <div className="graph-wrapper">
@@ -146,20 +196,19 @@ export default function Home() {
                           data={dataForGraph()}
                           cx="50%"
                           cy="50%"
-                          innerRadius={80}  // Donut hole size
-                          outerRadius={100}  // Outer radius of the donut
+                          innerRadius={80}  
+                          outerRadius={100}  
                           fill="#8884d8"
                           dataKey="value"
                           stroke="none"
-                          startAngle={90}  // Start at the top
-                          endAngle={-270}  // Rotate clockwise
+                          startAngle={90} 
+                          endAngle={-270}
                         >
                           {data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index]} />
                           ))}
                           {/* Use the Recharts Label component to place the text inside */}
                           <Label
-                            //  value={`${correctAnswers}/${totalQuestions}`} 
                             value={`${score}/${questions.length}`} 
                             position="center"
                             fill="#e4e4e4"
@@ -169,16 +218,13 @@ export default function Home() {
                         {/* <Tooltip /> */}
                       </PieChart>   
                     </div>
-                    <div className="quiz-congrats-message">
-                      <p>Congratulations, you're a true master of the macabre! You've survived every twist and turn like a seasoned slasher!</p>
-                    </div>
+                    <p className="quiz-congrats-message">{getFinalScoreQuote()}</p>
                   </div>
                   <div className="btn-play-again-container">
-                    <button className="btn-play-again">Play Again</button>
+                    <button onClick={handleStartOver} className="btn-play-again">Play Again</button>
                   </div>
                 </div>
         }
-        </div>
       </main>
     </div>
   );
