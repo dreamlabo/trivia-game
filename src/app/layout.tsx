@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 // import { alegreya } from './fonts/fonts';
-import { alegreya } from '../app/fonts/fonts';
+import { alegreya, openSans } from '../app/fonts/fonts';
 import "./globals.css";
 import Header from "./components/header/Header";
 // import Header from "@components/header/Header";
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${alegreya.variable} antialiased`} lang="en">
+    <html className={`${alegreya.variable} ${openSans.variable} antialiased`} lang="en">
       <body>
         <Header/>
         {children}

@@ -7,7 +7,7 @@ import { PieChart, Pie, Cell, Tooltip, Label } from 'recharts';
 
 import AnswerChoice from "./components/answerChoice";
 
-import {MessageDataHorror, MessageTypeHorror} from '../../data/horror/finalScoreQuotesHorror'
+import {MessageDataHorror, MessageTypeHorror} from '../../data/Horror/finalScoreQuotesHorror'
 
 const data = [
   { name: 'Correct', value: 3 },
