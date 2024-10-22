@@ -1,4 +1,4 @@
-const FinalGirlQuestions = [
+export const FinalGirlQuestions = [
     {
         question: "Who was the final girl in the first 'Scream' movie?",
         answers: [
@@ -77,7 +77,7 @@ const FinalGirlQuestions = [
                 "Jess Bradford",
                 'Phyl Martin' 
           ], 
-          correctAnswer: 'Jess Bradford '
+          correctAnswer: 'Jess Bradford'
       },
     {
         question: "Who was the final girl in the 1977 version of 'Suspiria'?",

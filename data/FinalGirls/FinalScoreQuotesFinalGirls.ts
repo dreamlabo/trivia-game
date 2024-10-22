@@ -2,7 +2,7 @@ export interface MessageTypeFinalGirls {
     message: string;
 }
 
-export const MessageDataHorror: MessageTypeFinalGirls[] = [
+export const MessageDataFinalGirl: MessageTypeFinalGirls[] = [
     {
         message: "You're the ultimate final girl! You've faced every horror with courage and wit, leaving no killer unchallenged!"
     },

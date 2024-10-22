@@ -2,7 +2,7 @@ export interface MessageTypeStrangerThings {
     message: string;
 }
 
-export const MessageDataHorror: MessageTypeStrangerThings[] = [
+export const MessageDataStrangerThings: MessageTypeStrangerThings[] = [
     {
         message: "You crushed it like Eleven with her powers! You've uncovered every secret of Hawkins like a pro, and nothing from the Upside Down can surprise you!"
     },

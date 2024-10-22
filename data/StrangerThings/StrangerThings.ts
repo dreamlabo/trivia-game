@@ -1,4 +1,4 @@
-const StrangerThingsQuestions = [
+export const StrangerThingsQuestions = [
     {
         question: "In which state does 'Stranger Things' take place in?",
         answers: [

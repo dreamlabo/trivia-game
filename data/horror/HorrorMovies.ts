@@ -1,4 +1,4 @@
-const HorrorMoviesQuestions = [
+export const HorrorMoviesQuestions = [
     {
         question: "What 2008 film by Bryan Bertino was influenced by the Manson murders?",
         answers: [
