@@ -10,15 +10,15 @@ export async  function GET( request: Request,
 
       switch(quizName) {
         case 'horror_movies':
-          data = await import('../../../../../data/Horror/finalScoreQuotesHorror');
+          data = await import('../../../data/Horror/finalScoreQuotesHorror');
           quotes = data.MessageDataHorror;
           break;
         case 'stranger_things':
-          data = await import('../../../../../data/StrangerThings/FinalScoreQuotesStrangerThings');
+          data = await import('../../../data/StrangerThings/FinalScoreQuotesStrangerThings');
           quotes = data.MessageDataStrangerThings;
           break;
         case 'final_girl':
-          data = await import('../../../../../data/FinalGirls/FinalScoreQuotesFinalGirls');
+          data = await import('../../../data/FinalGirls/FinalScoreQuotesFinalGirls');
           quotes = data.MessageDataFinalGirl;
           break;
         default:
@@ -27,6 +27,6 @@ export async  function GET( request: Request,
   
       return NextResponse.json({quotes}, {status: 200});
     } catch (error) {
-     return NextResponse.json({ message: 'Error loading data' }, {status: 500});
+     return NextResponse.json({ message: 'Error loading data', error: error }, {status: 500});
     }
   }

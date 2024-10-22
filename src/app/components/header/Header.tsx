@@ -11,7 +11,7 @@ export default function Header() {
         setIsDropdownOpen(prev => !prev)
     }
 
-    let dropdownRef = useRef<HTMLDivElement | null>(null); 
+    const dropdownRef = useRef<HTMLDivElement | null>(null); 
 
     const closeMenu = () => {
         setIsDropdownOpen(false);

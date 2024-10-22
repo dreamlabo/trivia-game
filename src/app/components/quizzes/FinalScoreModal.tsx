@@ -1,6 +1,4 @@
-
-import { PieChart, Pie, Cell, Tooltip, Label } from 'recharts';
-import { useState, useEffect } from 'react';
+import { PieChart, Pie, Cell, Label } from 'recharts';
 import Link from 'next/link';
 
 interface Quote {
@@ -67,30 +65,29 @@ export default function FinalScoreModal({finalMessages, quizName, finalScore, qu
             <div className="quiz-results-inner-container">
                 <div className="graph-wrapper">
                     <PieChart width={250 } height={250 }>
-                    <Pie
-                        data={getDataForGraph()}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={80}  
-                        outerRadius={100}  
-                        fill="#8884d8"
-                        dataKey="value"
-                        stroke="none"
-                        startAngle={90} 
-                        endAngle={-270}
-                    >
-                        {getDataForGraph().map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                        ))}
-                        {/* Use the Recharts Label component to place the text inside */}
-                        <Label
-                            value={`${finalScore}/${questionsLength}`} 
-                            position="center"
-                            fill="#e4e4e4"
-                            fontSize={24}
-                        />
-                    </Pie>
-                    {/* <Tooltip /> */}
+                        <Pie
+                            data={getDataForGraph()}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={80}  
+                            outerRadius={100}  
+                            fill="#8884d8"
+                            dataKey="value"
+                            stroke="none"
+                            startAngle={90} 
+                            endAngle={-270}
+                        >
+                            {getDataForGraph().map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                            ))}
+                            {/* Use the Recharts Label component to place the text inside */}
+                            <Label
+                                value={`${finalScore}/${questionsLength}`} 
+                                position="center"
+                                fill="#e4e4e4"
+                                fontSize={24}
+                            />
+                        </Pie>
                     </PieChart>   
                 </div>
                 

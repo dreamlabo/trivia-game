@@ -44,7 +44,7 @@ export default function QuizMainPage({ params }: { params: { name: string } }) {
     const handleStartOver = () => {
         setFinalScore(0)
         // setIsMounted(false)
-        setIsQuizOver(prev => false)
+        setIsQuizOver(false)
     };
 
     useEffect(() => {
