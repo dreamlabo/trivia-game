@@ -57,7 +57,7 @@ export default function QuizGame({quizName, questions, handleQuizOver}: QuizGame
                                     <h2 className="quiz-header-text-lg capitalize-text">{parseQuizName()}</h2>
                                 </div>
                                 <div>
-                              <p>Question {questionIndex + 1} of {questions.length}</p>
+                              <p className='question-count-text'>Question {questionIndex + 1} of {questions.length}</p>
                             </div>
                             </div>
                             <div className="question-container">{questions[questionIndex].question}</div>
