@@ -1,47 +1,47 @@
 'use client'
-import { useState, useEffect, useRef } from 'react';
+// import { useState, useEffect, useRef } from 'react';
 import React from 'react'
-import Link from 'next/link';
-import { FaChevronDown } from "react-icons/fa6";
+// import Link from 'next/link';
+// import { FaChevronDown } from "react-icons/fa6";
 
 export default function Header() {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const handleOpenDropdown = () => {
-        setIsDropdownOpen(prev => !prev)
-    }
+    // const handleOpenDropdown = () => {
+    //     setIsDropdownOpen(prev => !prev)
+    // }
 
-    const dropdownRef = useRef<HTMLDivElement | null>(null); 
+    // const dropdownRef = useRef<HTMLDivElement | null>(null); 
 
-    const closeMenu = () => {
-        setIsDropdownOpen(false);
-    }
+    // const closeMenu = () => {
+    //     // setIsDropdownOpen(false);
+    // }
 
-    const handleClickOutside = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-            closeMenu();
-          }
-    }
+    // const handleClickOutside = (event: MouseEvent) => {
+    //     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    //         closeMenu();
+    //       }
+    // }
     
-    function handleKeyDown(event: KeyboardEvent) {
-        if (event.key === 'Escape') {
-            closeMenu();
-        }
-    }
+    // function handleKeyDown(event: KeyboardEvent) {
+    //     if (event.key === 'Escape') {
+    //         closeMenu();
+    //     }
+    // }
 
-    const handleLinkClick = () => {
-        closeMenu(); // Close the dropdown when a link inside it is clicked
-      };
+    // const handleLinkClick = () => {
+    //     closeMenu(); // Close the dropdown when a link inside it is clicked
+    //   };
 
-    useEffect(() => {
-        document.body.addEventListener('click', handleClickOutside);
-        document.body.addEventListener('keydown', handleKeyDown);
+    // useEffect(() => {
+    //     document.body.addEventListener('click', handleClickOutside);
+    //     document.body.addEventListener('keydown', handleKeyDown);
     
-        return () => {
-          document.body.removeEventListener('click', handleClickOutside);
-          document.body.removeEventListener('keydown', handleKeyDown);
-        }
-    })
+    //     return () => {
+    //       document.body.removeEventListener('click', handleClickOutside);
+    //       document.body.removeEventListener('keydown', handleKeyDown);
+    //     }
+    // })
  
     return (
         <div className='header-wrapper'>
