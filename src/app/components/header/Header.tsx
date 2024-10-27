@@ -49,7 +49,7 @@ export default function Header() {
                 <div className='logo-wrapper'>
                     <span className='logo-first-letter'>N</span><span className='rest-of-word'>ightmare</span>&nbsp;&nbsp; <span className='logo-first-letter'>K</span><span className='rest-of-word'>nowledge</span>
                 </div>
-                <div ref={dropdownRef}  className='dropdown-wrapper'>
+                {/* <div ref={dropdownRef}  className='dropdown-wrapper'>
                     <button onClick={handleOpenDropdown} className='btn--openDropdown'><span>Choose Quiz</span><FaChevronDown /></button>
                     {isDropdownOpen &&  <ul className="dropdown-container" >
                                             <li><Link onClick={handleLinkClick} className="dropdown-link" href="/quiz/horror_movies">Horror Movies</Link></li>
@@ -57,7 +57,7 @@ export default function Header() {
                                             <li><Link onClick={handleLinkClick} className="dropdown-link" href="/quiz/final_girl">Final Girl</Link></li>
                                         </ul>
                     }
-                </div>
+                </div> */}
             </header>
         </div>
     )

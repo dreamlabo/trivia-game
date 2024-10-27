@@ -54,7 +54,7 @@ export default function FinalScoreModal({finalMessages, quizName, finalScore, qu
     }
     
     return (
-        <div className="final-score-container">
+        <div className="quiz-container">
             <div className="final-score-header-wrapper">
                 <h2 className="header-left quiz-header-text-lg capitalize-text">{parseQuizName()}</h2>
                 <div className="header-right">

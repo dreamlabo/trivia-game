@@ -23,9 +23,9 @@ export default function QuizMainPage({ params }: { params: { name: string } }) {
     const [hasQuizStarted, setHasQuizStarted] = useState(false);
     const [data, setData] = useState<Question[]>([]);
     const [finalMessagesData, setFinalMessagesData] = useState<Message | null>(null);
-    const [finalScore, setFinalScore] = useState(0)
+    const [finalScore, setFinalScore] = useState(0);
+    const [isLoading, setIsLoading] = useState(true)
    
-
     const parseQuizName = () => {
         return params.name.replace(/_/g, ' '); // Removes all underscores
     }
@@ -43,7 +43,6 @@ export default function QuizMainPage({ params }: { params: { name: string } }) {
 
     const handleStartOver = () => {
         setFinalScore(0)
-        // setIsMounted(false)
         setIsQuizOver(false)
     };
 
@@ -52,21 +51,22 @@ export default function QuizMainPage({ params }: { params: { name: string } }) {
           const res = await fetch(`/api/quizzes/${params.name}`);
           const json = await res.json();
           setData(json.questions);
-          console.log(json.questions.length)
 
           const responseFinalQuotes = await fetch(`/api/finalScoreQuotes/${params.name}`);
           const finalQuotesJson = await responseFinalQuotes.json();
           setFinalMessagesData(finalQuotesJson);
-          console.log(finalQuotesJson)
+          setIsLoading(false);
         };
     
         fetchData();
       }, [params.name]);
    
     return (
+       
         <div className="page-wrapper">
             <main className="section-wrapper">
-            {!isQuizOver && !hasQuizStarted && <QuizStartModal name={params.name} 
+            {isLoading && <div>Loading...</div>}
+            {!isLoading && !isQuizOver && !hasQuizStarted && <QuizStartModal name={params.name} 
                                                         handleStartButton={handleStartQuizButton}
                                                 />
             } 
