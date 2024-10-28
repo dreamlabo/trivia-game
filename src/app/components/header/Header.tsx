@@ -1,7 +1,7 @@
 'use client'
 // import { useState, useEffect, useRef } from 'react';
 import React from 'react'
-// import Link from 'next/link';
+import Link from 'next/link';
 // import { FaChevronDown } from "react-icons/fa6";
 
 export default function Header() {
@@ -46,9 +46,9 @@ export default function Header() {
     return (
         <div className='header-wrapper'>
             <header className='header-container'>
-                <div className='logo-wrapper'>
+                <Link href="/" className='logo-wrapper'>
                     <span className='logo-first-letter'>N</span><span className='rest-of-word'>ightmare</span>&nbsp;&nbsp; <span className='logo-first-letter'>K</span><span className='rest-of-word'>nowledge</span>
-                </div>
+                </Link>
                 {/* <div ref={dropdownRef}  className='dropdown-wrapper'>
                     <button onClick={handleOpenDropdown} className='btn--openDropdown'><span>Choose Quiz</span><FaChevronDown /></button>
                     {isDropdownOpen &&  <ul className="dropdown-container" >

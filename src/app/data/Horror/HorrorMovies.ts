@@ -20,7 +20,7 @@ export const HorrorMoviesQuestions = [
           correctAnswer: 'Alaska'
       },
       {
-        question: "What actress plays portrayed protagonist Grace Stewart in 2001's 'The Others' set in?",
+        question: "What actress plays portrayed protagonist Grace Stewart in 2001's 'The Others'?",
         answers: [
                 'Elaine Cassidy',
                 'Alakina Mann',
