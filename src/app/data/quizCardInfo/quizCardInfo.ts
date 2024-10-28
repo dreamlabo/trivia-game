@@ -21,7 +21,7 @@ export const QuizCardInfo: QuizCardInfoType[] = [
     {
         title: "Stranger Things",
         description: "Do you have what it takes to unlock the secrets of Hawkins and the Upside Down?",
-        quizURL: "horror_movies",
+        quizURL: "stranger_things",
         backgroundImage: "/images/strangerThingsBackground.png"
     },
 ]
