@@ -44,6 +44,7 @@ export default function Header() {
     // })
  
     return (
+        <div className='header-outer-wrapper'>
         <div className='header-wrapper'>
             <header className='header-container'>
                 <Link href="/" className='logo-wrapper'>
@@ -59,6 +60,7 @@ export default function Header() {
                     }
                 </div> */}
             </header>
+        </div>
         </div>
     )
 }

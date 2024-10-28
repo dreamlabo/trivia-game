@@ -43,6 +43,14 @@ html {
   background: var(--color-a0);
 }
 
+.header-outer-wrapper {
+  position: sticky;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  background: var(--color-a0);
+}
+
 .page-wrapper {
   width: calc(100% - 4rem);
   max-width: 1530px;
@@ -684,18 +692,19 @@ html {
   position: relative;
   z-index: 100;
   color: var(--clr-accent-main);
-  font-size: clamp(1.2rem, 3vw + 5px, 2.5rem); 
+  font-size: clamp(1.4rem, 3vw + 8px, 2.5rem); 
   max-width: 30ch;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .hero-text-main--accent {
+  /* border: 1px solid red; */
   color: #8B0000;
   font-family: var(--font-alegreya);
   font-style: italic;
   /* the '+ 5px' on each is to account for the change in font-family */
-  font-size: clamp(1.5rem + 5px, 3vw + 5px + 5px, 2.5rem + 5px)
+  font-size: clamp(1.8rem + 5px, 3vw + 5px + 5px, 2.5rem + 8px)
 }
 
  .hero-text-wrapper {
@@ -735,7 +744,7 @@ html {
 
   .hero-text-main--accent {
     /* the '+ 2px' on each is to account for the change in font-family */
-    font-size: clamp(1.5rem + 2px, 3vw + 5px + 2px, 2.5rem + 2px)
+    font-size: clamp(1.8rem + 2px, 3vw + 5px + 2px, 2.5rem + 2px)
    }
 }
 
@@ -748,7 +757,7 @@ html {
 
   .hero-text-main--accent {
     /* the '+ 2px' on each is to account for the change in font-family */
-    font-size: clamp(1.5rem, 3vw + 5px, 2.5rem)
+    font-size: clamp(1.7rem, 3vw + 5px, 2.5rem)
   }
 
   .quiz-list-text-header {
