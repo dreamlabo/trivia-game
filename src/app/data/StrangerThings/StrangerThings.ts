@@ -107,7 +107,7 @@ export const StrangerThingsQuestions = [
                 'MKUltra',
                 'Operation Mockingbird' 
           ], 
-          correctAnswer: ''
+          correctAnswer: 'MKUltra'
       },
 
 ]

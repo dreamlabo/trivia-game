@@ -20,7 +20,7 @@ export const FinalGirlQuestions = [
           correctAnswer: 'Village of the Damned'
       },
       {
-        question: "In the 1968 movie 'Rosemary's Baby', what was the name of the building Rosemary and Guy moved into",
+        question: "In the 1968 movie 'Rosemary's Baby', what was the name of the building Rosemary and Guy moved into?",
         answers: [
                 'Chelsea Hotel',
                 'The Dakota',
@@ -40,7 +40,7 @@ export const FinalGirlQuestions = [
           correctAnswer: 'Robert Bloch'
       },
       {
-        question: "Who played the former child star in the 1962 film 'What Happened to Baby Jane?",
+        question: "Who played the former child star in the 1962 film 'What Happened to Baby Jane'?",
         answers: [
                 'Madeline Kahn',
                 'Jane Russell',
@@ -73,7 +73,7 @@ export const FinalGirlQuestions = [
         question: "What magazine originally serialized H.P. Lovecraft's  'At The Mountains of Madness'?",
         answers: [
                 'Astounding Stories',
-                'Weird takes',
+                'Weird Tales',
                 'Horror Tales',
                 'Monster World' 
           ], 
