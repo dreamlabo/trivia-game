@@ -26,7 +26,7 @@ export const QuizCardInfo: QuizCardInfoType[] = [
     },
     {
         title: "Classic Horror",
-        description: "Journey back to the era that defined fear… How well do you know classic horror legends?",
+        description: "Journey back to the era that defined fear… How well do you know the classics?",
         quizURL: "classic_horror",
         backgroundImage: "/images/staircase.png"
     },
