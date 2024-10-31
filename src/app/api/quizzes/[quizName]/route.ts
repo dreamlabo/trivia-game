@@ -22,7 +22,7 @@ export async function GET( request: Request,
           questions = data.FinalGirlQuestions;
           break;
         case 'classic_horror':
-          data = await import('../../../data/ClassicHorror/classicHorror');
+          data = await import('../../../data/ClassicHorror/ClassicHorror');
           questions = data.FinalGirlQuestions;
           break;
         default:

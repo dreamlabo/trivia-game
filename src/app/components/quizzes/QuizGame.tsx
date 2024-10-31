@@ -28,6 +28,7 @@ export default function QuizGame({quizName, questions, handleQuizOver}: QuizGame
     }
 
     const handleClick = (answer: string) => {
+      // console.log(isAnswerCorrect)
         if(answer === questions[questionIndex].correctAnswer) {
         //   setIsAnswerCorrect(true)
           setScore(score => score + 1)
