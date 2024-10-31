@@ -8,6 +8,7 @@ const tagLines = [
   {tagLine: "Face the darkness and prove your horror movie mastery!"},
   {tagLine: "Step into Hawkins… Are you ready to unravel the mysteries of the Upside Down?"},
   {tagLine: "Dare to face the killers? Prove your expertise in final girl lore!"},
+  {tagLine: "From black-and-white chills to timeless thrills — test your classic horror knowledge!"},
 ]
 
 export default function QuizStartModal({name, handleStartButton} : QuizProps) {
@@ -23,6 +24,8 @@ export default function QuizStartModal({name, handleStartButton} : QuizProps) {
           return tagLines[1].tagLine;
         case "final_girl":
           return tagLines[2].tagLine;
+        case "classic_horror":
+          return tagLines[3].tagLine;
       }
     }
 

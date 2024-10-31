@@ -99,4 +99,24 @@ export const HorrorMoviesQuestions = [
           ], 
           correctAnswer: 'The Silence of the Lambs'
       },
+      {
+        question: "Who directed the 2003 film 'House of 1000 Corpses?",
+        answers: [
+                'Alice Cooper',
+                'Rob Zombie',
+                'Dee Snider',
+                'Sid Haig' 
+          ], 
+          correctAnswer: 'Rob Zombie'
+      },
+      {
+        question: "What is the name of the puppet who gives instructions to the victims in the 'Saw' movies?",
+        answers: [
+                'Billy',
+                'Tommy',
+                'Bradley',
+                'Andy' 
+          ], 
+          correctAnswer: 'Billy'
+      },
 ]

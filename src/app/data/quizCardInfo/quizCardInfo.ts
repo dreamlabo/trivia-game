@@ -24,4 +24,10 @@ export const QuizCardInfo: QuizCardInfoType[] = [
         quizURL: "stranger_things",
         backgroundImage: "/images/strangerThingsBackground.png"
     },
+    {
+        title: "Classic Horror",
+        description: "Journey back to the era that defined fear… How well do you know classic horror legends?",
+        quizURL: "classic_horror",
+        backgroundImage: "/images/staircase.png"
+    },
 ]

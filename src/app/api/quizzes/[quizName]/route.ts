@@ -21,8 +21,12 @@ export async function GET( request: Request,
           data = await import('../../../data/FinalGirls/FinalGirls');
           questions = data.FinalGirlQuestions;
           break;
+        case 'classic_horror':
+          data = await import('../../../data/ClassicHorror/classicHorror');
+          questions = data.FinalGirlQuestions;
+          break;
         default:
-          return NextResponse.json({ message: 'Data not found' }, {status: 200});
+          return NextResponse.json({ message: 'Data not found' }, {status: 404});
       }
   
       return NextResponse.json({questions}, {status: 200});

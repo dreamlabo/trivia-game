@@ -99,4 +99,15 @@ export const StrangerThingsQuestions = [
           ], 
           correctAnswer: 'Hawkins Post'
       },
+      {
+        question: "What CIA project resulted in Eleven gaining psychokinetic powers?",
+        answers: [
+                'A-12 OXCART',
+                'Operation Wandering Soul',
+                'MKUltra',
+                'Operation Mockingbird' 
+          ], 
+          correctAnswer: ''
+      },
+
 ]

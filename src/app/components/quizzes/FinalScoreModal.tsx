@@ -36,7 +36,6 @@ export default function FinalScoreModal({finalMessages, quizName, finalScore, qu
     }
 
     const getFinalScoreQuote = () => {
-        console.log("LLLL", finalMessages.quotes[0].message)
         const percent = Math.floor((finalScore / questionsLength) * 100);
         switch (true) {
             case percent === 100:

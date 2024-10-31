@@ -31,7 +31,6 @@ export default function QuizGame({quizName, questions, handleQuizOver}: QuizGame
         if(answer === questions[questionIndex].correctAnswer) {
         //   setIsAnswerCorrect(true)
           setScore(score => score + 1)
-          console.log(isAnswerCorrect)
         }
         else {
           setIsAnswerCorrect(false);
@@ -63,19 +62,18 @@ export default function QuizGame({quizName, questions, handleQuizOver}: QuizGame
                             <div className="question-container">{questions[questionIndex].question}</div>
                             <ul className="answer-container">
                             {questions[questionIndex].answers.map((answer) => {
-                            return ( <AnswerChoice 
-                                isCorrectAnswer={isAnswered && answer === questions[questionIndex].correctAnswer} 
-                                isAnswered={isAnswered}
-                                answer={answer} 
-                                key={answer} 
-                                answerChosen={answerChosen}
-                                handleClick={handleClick}
-                              />
-                            )
+                              return ( <AnswerChoice 
+                                  isCorrectAnswer={isAnswered && answer === questions[questionIndex].correctAnswer} 
+                                  isAnswered={isAnswered}
+                                  answer={answer} 
+                                  key={answer} 
+                                  answerChosen={answerChosen}
+                                  handleClick={handleClick}
+                                />
+                              )
                             })}
                           </ul>
-                          {isAnswered && (questionIndex  <= questions.length - 1) && <div className="btn-container"><button className="btn-next" onClick={handleNextButton}><span>{(questionIndex  >= questions.length - 1) ? `Show Score` : `Next`}</span><span><FaArrowRightLong /></span></button></div> }
-   
+                          {isAnswered && (questionIndex  <= questions.length - 1) && <div className="btn-container"><button className="btn-next" onClick={handleNextButton}><span>{(questionIndex  >= questions.length - 1) ? `Show Score` : `Next`}</span><span><FaArrowRightLong /></span></button></div>}
     </div>
   )
 }
